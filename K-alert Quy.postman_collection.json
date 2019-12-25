@@ -1,0 +1,2392 @@
+{
+	"info": {
+		"_postman_id": "ec3207bd-814c-4226-9860-c4717ac4f276",
+		"name": "K-alert Quy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@admin.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/admin/auth/login",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/auth/logout",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\" : \"ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnpkV0lpT2lKdGFXNW9iV2hBYm1Gc0xuWnVJaXdpYVhOeklqb2lhSFIwY0RwY0wxd3ZiRzlqWVd4b2IzTjBPamd3T0RWY0wyRndhVnd2WVdSdGFXNWNMMkYxZEdoY0wyWnZjbWR2ZEhCaGMzTjNiM0prY3lJc0ltbGhkQ0k2TVRVM05qWXpPREl6TkN3aVpYaHdJam94TlRjMk56STBOak0wTENKdVltWWlPakUxTnpZMk16Z3lNelFzSW1wMGFTSTZJbUpsU21FMFUweFFNMmhtU25KYU1rVWlmUS5qQjExTzhxeTc2RVU1X1pZQ0dWa1YweU1xYm9OTGJHQWJDTUVHZmQxaTVJ\",\n  \"password\" : \"test123#H\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/auth/resetpasswords",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"resetpasswords"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgotpasswords",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\" : \"minhmh@nal.vn\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/auth/forgotpasswords",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"forgotpasswords"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4NVwvYXBpXC9hZG1pblwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NzY0ODQxMjIsImV4cCI6MTU3NjkxNjEyMiwibmJmIjoxNTc2NDg0MTIyLCJqdGkiOiI5R0g1SE1LRlY4MXdlMEJXIiwic3ViIjoxLCJwcnYiOiJjZjI4NGMyYjFlMDZmMzNjMjZiZDU3OTc1NjZkOWZkNzRiZTExYmY1Iiwicm9sZXMiOiJhZG1pbiJ9.fg0zmzcTb9XCBcdwdGQexO-pj_hK5FH2Zg6HcXUieO0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/auth/me",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Sub admin",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/subAdmins",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"subAdmins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"quyhbn1\",\n\t\"email\" : \"quyhbn1@nal.vn\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/subAdmins",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"subAdmins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/subAdmins/2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"subAdmins",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/subAdmins/2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"subAdmins",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/subAdmins/2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"subAdmins",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Owner",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/owners/",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"owners",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"user1\",\n    \"full_name\": \"Test User 1\",\n    \"email\": \"user1@user.com\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/owners",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"owners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "restart service(miss)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/admins",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"admins"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "SystemSetting",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/systemSettings/",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"systemSettings",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"hello company\",\n\t\"content\": \"content company\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/systemSettings/1",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"systemSettings",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Partner",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/partners?ownerId=2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"partners"
+									],
+									"query": [
+										{
+											"key": "ownerId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Auto mail",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/autoMails",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"autoMails"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "destinations",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/destinations?ownerId=1",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"destinations"
+									],
+									"query": [
+										{
+											"key": "ownerId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "masterCategories",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/masterCategories",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"masterCategories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Category and template detail (header)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"\",\n\t\"template_details\" : [\n\t\t{\n            \"id\": 1,\n            \"name\": \"金融機関名\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"支店名\"\n        }\n\t]\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/masterCategories/{categoryId}",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"masterCategories",
+										"{categoryId}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "template Details",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/masterCategories",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"masterCategories"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/auth/login",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/auth/login",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\" : \"ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnpkV0lpT2lKdGFXNW9iV2hBYm1Gc0xuWnVJaXdpYVhOeklqb2lhSFIwY0RwY0wxd3ZiRzlqWVd4b2IzTjBPamd3T0RWY0wyRndhVnd2WVdSdGFXNWNMMkYxZEdoY0wyWnZjbWR2ZEhCaGMzTjNiM0prY3lJc0ltbGhkQ0k2TVRVM05qWXpPREl6TkN3aVpYaHdJam94TlRjMk56STBOak0wTENKdVltWWlPakUxTnpZMk16Z3lNelFzSW1wMGFTSTZJbUpsU21FMFUweFFNMmhtU25KYU1rVWlmUS5qQjExTzhxeTc2RVU1X1pZQ0dWa1YweU1xYm9OTGJHQWJDTUVHZmQxaTVJ\",\n  \"password\" : \"test123#H\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/auth/reset",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"reset"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgotpasswords",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\" : \"minhmh@nal.vn\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/auth/recovery",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"recovery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/auth/logout",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODA4NVwvYXBpXC9hZG1pblwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NzY0ODQxMjIsImV4cCI6MTU3NjkxNjEyMiwibmJmIjoxNTc2NDg0MTIyLCJqdGkiOiI5R0g1SE1LRlY4MXdlMEJXIiwic3ViIjoxLCJwcnYiOiJjZjI4NGMyYjFlMDZmMzNjMjZiZDU3OTc1NjZkOWZkNzRiZTExYmY1Iiwicm9sZXMiOiJhZG1pbiJ9.fg0zmzcTb9XCBcdwdGQexO-pj_hK5FH2Zg6HcXUieO0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/auth/me",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5c292160-bbd1-442f-8e5f-33df69fa7212",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "67b2c3cc-5ca0-4914-8f8c-ff9edf813a7d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Owner",
+					"item": [
+						{
+							"name": "Asset",
+							"item": [
+								{
+									"name": "charge",
+									"item": [
+										{
+											"name": "create",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/x-www-form-urlencoded",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "{{host}}/api/user-categories/4/assets/create",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories",
+														"4",
+														"assets",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "list",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{host}}/api/user-categories/5/assets",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories",
+														"5",
+														"assets"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "store",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "detail[1][id]",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "detail[1][value]",
+															"value": "aaaaaa",
+															"type": "text"
+														},
+														{
+															"key": "detail[2][id]",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "detail[2][value]",
+															"value": "bbb",
+															"type": "text"
+														},
+														{
+															"key": "detail[3][id]",
+															"value": "3",
+															"type": "text"
+														},
+														{
+															"key": "detail[3][value]",
+															"value": "ccc",
+															"type": "text"
+														},
+														{
+															"key": "note",
+															"value": "aaaaa",
+															"type": "text"
+														},
+														{
+															"key": "more[0][name]",
+															"value": "aaaaa",
+															"type": "text"
+														},
+														{
+															"key": "file_description",
+															"value": "qwerty",
+															"type": "text"
+														},
+														{
+															"key": "partners[]",
+															"value": "13",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "partners[]",
+															"value": "14",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "partners[]",
+															"value": "15",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "more[0][name]",
+															"value": "11",
+															"type": "text"
+														},
+														{
+															"key": "more[0][value]",
+															"value": "aa",
+															"type": "text"
+														},
+														{
+															"key": "more[1][name]",
+															"value": "222",
+															"type": "text"
+														},
+														{
+															"key": "more[1][value]",
+															"value": "bbbb",
+															"type": "text"
+														},
+														{
+															"key": "attachments[]",
+															"type": "file",
+															"src": []
+														},
+														{
+															"key": "attachments[]",
+															"type": "file",
+															"src": []
+														},
+														{
+															"key": "file_description",
+															"type": "file",
+															"src": []
+														}
+													]
+												},
+												"url": {
+													"raw": "{{host}}/api/user-categories/4/assets",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories",
+														"4",
+														"assets"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "store copy",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\tdetail: [\n\t\t{\n\t\t\t\"id\":1,\n\t\t\t\"name\":\"金融機関名\",\n\t\t\t\"value\":\"eeeeeeeeeeee2\"\n\t\t},\n\t\t{\n\t\t\t\"id\":2,\n\t\t\t\"name\":\"支店名\",\n\t\t\t\"value\":\"22222222\"\n\t\t},\n\t\t{\n\t\t\t\"id\":3,\n\t\t\t\"name\":\"名義\",\n\t\t\t\"value\":\"222222222222\"\n\t\t}\n\t]\n}"
+												},
+												"url": {
+													"raw": "{{host}}/api/user-categories/6/assets",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories",
+														"6",
+														"assets"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "File",
+									"item": [
+										{
+											"name": "upload",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "attach",
+															"type": "file",
+															"src": "/Users/macintosh/Desktop/1571886462.pdf"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{host}}/api/upload/attach",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"upload",
+														"attach"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "delete",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/x-www-form-urlencoded",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "attach",
+															"value": "3",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{host}}/api/upload/attach/5",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"upload",
+														"attach",
+														"5"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "list all",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/api/categories/6/assets",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"6",
+												"assets"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "detail",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/assets/6",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "detail Copy",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/assets/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "detail[1][id]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "detail[1][value]",
+													"value": "aaaaaa",
+													"type": "text"
+												},
+												{
+													"key": "detail[2][id]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "detail[2][value]",
+													"value": "bbb",
+													"type": "text"
+												},
+												{
+													"key": "detail[3][id]",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "detail[3][value]",
+													"value": "ccc",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "aaaaa",
+													"type": "text"
+												},
+												{
+													"key": "more[0][name]",
+													"value": "aaaaa",
+													"type": "text"
+												},
+												{
+													"key": "file_description",
+													"value": "qwerty",
+													"type": "text"
+												},
+												{
+													"key": "partners[]",
+													"value": "13",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "partners[]",
+													"value": "14",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "partners[]",
+													"value": "15",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "more[0][name]",
+													"value": "11",
+													"type": "text"
+												},
+												{
+													"key": "more[0][value]",
+													"value": "aa",
+													"type": "text"
+												},
+												{
+													"key": "more[1][name]",
+													"value": "222",
+													"type": "text"
+												},
+												{
+													"key": "more[1][value]",
+													"value": "bbbb",
+													"type": "text"
+												},
+												{
+													"key": "attachments[]",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "attachments[]",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/categories/6/assets",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"6",
+												"assets"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "detail[1][id]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "detail[1][value]",
+													"value": "aaaaaa",
+													"type": "text"
+												},
+												{
+													"key": "detail[2][id]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "detail[2][value]",
+													"value": "bbb",
+													"type": "text"
+												},
+												{
+													"key": "detail[3][id]",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "detail[3][value]",
+													"value": "ccc",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "aaaaa",
+													"type": "text"
+												},
+												{
+													"key": "more[0][name]",
+													"value": "aaaaa",
+													"type": "text"
+												},
+												{
+													"key": "file_description",
+													"value": "qwerty",
+													"type": "text"
+												},
+												{
+													"key": "partners[]",
+													"value": "13",
+													"type": "text"
+												},
+												{
+													"key": "partners[]",
+													"value": "14",
+													"type": "text"
+												},
+												{
+													"key": "partners[]",
+													"value": "15",
+													"type": "text"
+												},
+												{
+													"key": "more[0][name]",
+													"value": "11",
+													"type": "text"
+												},
+												{
+													"key": "more[0][value]",
+													"value": "aa",
+													"type": "text"
+												},
+												{
+													"key": "more[1][name]",
+													"value": "222",
+													"type": "text"
+												},
+												{
+													"key": "more[1][value]",
+													"value": "bbbb",
+													"type": "text"
+												},
+												{
+													"key": "attachments[]",
+													"type": "file",
+													"src": "/Users/macintosh/Desktop/1571886462.pdf"
+												},
+												{
+													"key": "attachments[]",
+													"type": "file",
+													"src": []
+												},
+												{
+													"key": "_method",
+													"value": "put",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/assets/107",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"107"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "edit",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/assets/32",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"32"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/assets/29",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"29"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "create",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{host}}/api/categories/6/assets/create",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"6",
+												"assets",
+												"create"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Categories",
+							"item": [
+								{
+									"name": "list all",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/api/categories",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "detail",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/categories/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "edit",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/categories/1/edit",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"1",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "category_id",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/categories",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "aaa",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/categories/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "edit",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/categories/8/edit",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"8",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/categories/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "systemSetting",
+							"item": [
+								{
+									"name": "systemSettings",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": ""
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Partner",
+							"item": [
+								{
+									"name": "list all",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/api/partners?page=1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"partners"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "create",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/api/partners/create",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"partners",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "edit",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/api/partners/3/edit",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"partners",
+												"3",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "put",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "assets[]",
+													"value": "6",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "aaaaa",
+													"type": "text"
+												},
+												{
+													"key": "assets[]",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/partners/3",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"partners",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "List not partner",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}api/users/search",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"users",
+												"search"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/partners/4",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"partners",
+												"4"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Invite",
+							"item": [
+								{
+									"name": "invite",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}api/invites",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"invites"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "user_id",
+													"value": "6",
+													"type": "text"
+												},
+												{
+													"key": "assets[]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "assets[]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "asdsad",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/invites",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"invites"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "agree",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/api/invites/6/agree",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"invites",
+												"6",
+												"agree"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "disagree",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "user_id",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "assets[]",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "assets[]",
+													"value": "107",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/invites/2/disagree",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"invites",
+												"2",
+												"disagree"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "test mail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
