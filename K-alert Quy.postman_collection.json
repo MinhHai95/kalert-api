@@ -2373,7 +2373,7 @@
 							"_postman_isSubFolder": true
 						},
 						{
-							"name": "Auto mail",
+							"name": "Destination",
 							"item": [
 								{
 									"name": "index",
@@ -2411,18 +2411,12 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}api/destinations?page=1",
+											"raw": "{{host}}api/destinations",
 											"host": [
 												"{{host}}api"
 											],
 											"path": [
 												"destinations"
-											],
-											"query": [
-												{
-													"key": "page",
-													"value": "1"
-												}
 											]
 										}
 									},
@@ -2513,14 +2507,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/destinations/152/edit",
+											"raw": "{{host}}/api/destinations/1/edit",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"destinations",
-												"152",
+												"1",
 												"edit"
 											]
 										}
@@ -2645,6 +2639,46 @@
 											]
 										},
 										"url": {
+											"raw": "{{host}}/api/destinations/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"destinations",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
 											"raw": "{{host}}/api/destinations/152",
 											"host": [
 												"{{host}}"
@@ -2657,9 +2691,227 @@
 										}
 									},
 									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Mail Template",
+							"item": [
+								{
+									"name": "index",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}api/mailTemplates",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"mailTemplates"
+											]
+										}
+									},
+									"response": []
 								},
 								{
-									"name": "delete",
+									"name": "create",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/mailTemplates/create",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"mailTemplates",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "edit",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/mailTemplates/1/edit",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"mailTemplates",
+												"1",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "hai@hai.com",
+													"type": "text"
+												},
+												{
+													"key": "full_name",
+													"value": "asdasdasdas",
+													"type": "text"
+												},
+												{
+													"key": "company_name",
+													"value": "qwewqewqewqe",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "qewewqeqwewqewqe",
+													"type": "text"
+												},
+												{
+													"key": "auto_mail_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/mailTemplates",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"mailTemplates"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "put",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2711,13 +2963,53 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/destinations/152",
+											"raw": "{{host}}/api/mailTemplates/1",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
-												"destinations",
+												"mailTemplates",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{host}}/api/mailTemplates/152",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"mailTemplates",
 												"152"
 											]
 										}
