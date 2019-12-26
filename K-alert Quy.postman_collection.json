@@ -1348,7 +1348,7 @@
 												},
 												{
 													"key": "more[0][name]",
-													"value": "aaaaa",
+													"value": "11",
 													"type": "text"
 												},
 												{
@@ -1375,11 +1375,6 @@
 													"disabled": true
 												},
 												{
-													"key": "more[0][name]",
-													"value": "11",
-													"type": "text"
-												},
-												{
 													"key": "more[0][value]",
 													"value": "aa",
 													"type": "text"
@@ -1390,19 +1385,27 @@
 													"type": "text"
 												},
 												{
-													"key": "more[1][value]",
+													"key": "more[1][aaa]",
 													"value": "bbbb",
 													"type": "text"
 												},
 												{
 													"key": "attachments[]",
 													"value": "5",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "attachments[]",
 													"value": "3",
-													"type": "text"
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "more[0][aaaa]",
+													"value": "",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
@@ -1639,14 +1642,14 @@
 											"urlencoded": []
 										},
 										"url": {
-											"raw": "{{host}}/api/categories/6/assets/create",
+											"raw": "{{host}}/api/categories/10/assets/create",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"categories",
-												"6",
+												"10",
 												"assets",
 												"create"
 											]
@@ -2040,14 +2043,14 @@
 											"formdata": []
 										},
 										"url": {
-											"raw": "{{host}}/api/partners/3/edit",
+											"raw": "{{host}}/api/partners/7/edit",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"partners",
-												"3",
+												"7",
 												"edit"
 											]
 										}
@@ -2360,6 +2363,362 @@
 												"invites",
 												"2",
 												"disagree"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Auto mail",
+							"item": [
+								{
+									"name": "index",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}api/destinations?page=1",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"destinations"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "create",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/destinations/create",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"destinations",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "edit",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/destinations/152/edit",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"destinations",
+												"152",
+												"edit"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "hai@hai.com",
+													"type": "text"
+												},
+												{
+													"key": "full_name",
+													"value": "asdasdasdas",
+													"type": "text"
+												},
+												{
+													"key": "company_name",
+													"value": "qwewqewqewqe",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "qewewqeqwewqewqe",
+													"type": "text"
+												},
+												{
+													"key": "auto_mail_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/destinations",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"destinations"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "put",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "hai@hai.com",
+													"type": "text"
+												},
+												{
+													"key": "full_name",
+													"value": "a",
+													"type": "text"
+												},
+												{
+													"key": "company_name",
+													"value": "a",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "a",
+													"type": "text"
+												},
+												{
+													"key": "auto_mail_id",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/destinations/152",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"destinations",
+												"152"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "hai@hai.com",
+													"type": "text"
+												},
+												{
+													"key": "full_name",
+													"value": "a",
+													"type": "text"
+												},
+												{
+													"key": "company_name",
+													"value": "a",
+													"type": "text"
+												},
+												{
+													"key": "note",
+													"value": "a",
+													"type": "text"
+												},
+												{
+													"key": "auto_mail_id",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/destinations/152",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"destinations",
+												"152"
 											]
 										}
 									},
