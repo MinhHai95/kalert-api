@@ -642,12 +642,12 @@
 									"urlencoded": [
 										{
 											"key": "username",
-											"value": "user",
+											"value": "testUser1",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "user",
+											"value": "Abcd1234",
 											"type": "text"
 										}
 									]
@@ -2846,14 +2846,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/mailTemplates/150/edit",
+											"raw": "{{host}}/api/mailTemplates/1/edit",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"mailTemplates",
-												"150",
+												"1",
 												"edit"
 											]
 										}
@@ -2901,13 +2901,13 @@
 													"type": "text"
 												},
 												{
-													"key": "destinations[]",
+													"key": "destination_ids[]",
 													"value": "1",
 													"type": "text"
 												},
 												{
-													"key": "destinations[]",
-													"value": "153",
+													"key": "destination_ids[]",
+													"value": "2",
 													"type": "text"
 												}
 											]
@@ -2966,12 +2966,12 @@
 													"type": "text"
 												},
 												{
-													"key": "destinations[]",
+													"key": "destination_ids[]",
 													"value": "1",
 													"type": "text"
 												},
 												{
-													"key": "destinations[]",
+													"key": "destination_ids[]",
 													"value": "153",
 													"type": "text",
 													"disabled": true
@@ -2979,14 +2979,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/mailTemplates/150",
+											"raw": "{{host}}/api/mailTemplates/147",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"mailTemplates",
-												"150"
+												"147"
 											]
 										}
 									},
