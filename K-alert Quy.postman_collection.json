@@ -1115,7 +1115,14 @@
 													]
 												},
 												"method": "POST",
-												"header": [],
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/x-www-form-urlencoded",
+														"type": "text"
+													}
+												],
 												"body": {
 													"mode": "formdata",
 													"formdata": [
@@ -1385,7 +1392,7 @@
 													"type": "text"
 												},
 												{
-													"key": "more[1][aaa]",
+													"key": "more[1][value]",
 													"value": "bbbb",
 													"type": "text"
 												},
@@ -1580,14 +1587,14 @@
 											"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
 										},
 										"url": {
-											"raw": "{{host}}/api/assets/32",
+											"raw": "{{host}}/api/assets/1",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"assets",
-												"32"
+												"1"
 											]
 										}
 									},
@@ -2195,7 +2202,14 @@
 											]
 										},
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
 										"url": {
 											"raw": "{{host}}api/invites",
 											"host": [
@@ -2235,18 +2249,19 @@
 											"formdata": [
 												{
 													"key": "user_id",
-													"value": "6",
+													"value": "7",
 													"type": "text"
 												},
 												{
 													"key": "assets[]",
-													"value": "1",
+													"value": "3",
 													"type": "text"
 												},
 												{
 													"key": "assets[]",
 													"value": "2",
-													"type": "text"
+													"type": "text",
+													"disabled": true
 												},
 												{
 													"key": "note",
@@ -2295,14 +2310,14 @@
 											"formdata": []
 										},
 										"url": {
-											"raw": "{{host}}/api/invites/6/agree",
+											"raw": "{{host}}/api/invites/3/agree",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"invites",
-												"6",
+												"3",
 												"agree"
 											]
 										}
@@ -2831,14 +2846,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/mailTemplates/1/edit",
+											"raw": "{{host}}/api/mailTemplates/150/edit",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"mailTemplates",
-												"1",
+												"150",
 												"edit"
 											]
 										}
@@ -2871,28 +2886,28 @@
 											"mode": "urlencoded",
 											"urlencoded": [
 												{
-													"key": "email",
-													"value": "hai@hai.com",
+													"key": "name",
+													"value": "asdsadasd",
 													"type": "text"
 												},
 												{
-													"key": "full_name",
-													"value": "asdasdasdas",
+													"key": "title",
+													"value": "sadasdasd",
 													"type": "text"
 												},
 												{
-													"key": "company_name",
+													"key": "text",
 													"value": "qwewqewqewqe",
 													"type": "text"
 												},
 												{
-													"key": "note",
-													"value": "qewewqeqwewqewqe",
+													"key": "destinations[]",
+													"value": "1",
 													"type": "text"
 												},
 												{
-													"key": "auto_mail_id",
-													"value": "2",
+													"key": "destinations[]",
+													"value": "153",
 													"type": "text"
 												}
 											]
@@ -2936,41 +2951,42 @@
 											"mode": "urlencoded",
 											"urlencoded": [
 												{
-													"key": "email",
-													"value": "hai@hai.com",
-													"type": "text"
-												},
-												{
-													"key": "full_name",
+													"key": "name",
 													"value": "a",
 													"type": "text"
 												},
 												{
-													"key": "company_name",
+													"key": "title",
 													"value": "a",
 													"type": "text"
 												},
 												{
-													"key": "note",
+													"key": "text",
 													"value": "a",
 													"type": "text"
 												},
 												{
-													"key": "auto_mail_id",
+													"key": "destinations[]",
 													"value": "1",
 													"type": "text"
+												},
+												{
+													"key": "destinations[]",
+													"value": "153",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/mailTemplates/1",
+											"raw": "{{host}}/api/mailTemplates/150",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"mailTemplates",
-												"1"
+												"150"
 											]
 										}
 									},
@@ -3003,14 +3019,14 @@
 											"urlencoded": []
 										},
 										"url": {
-											"raw": "{{host}}/api/mailTemplates/152",
+											"raw": "{{host}}/api/mailTemplates/1",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"mailTemplates",
-												"152"
+												"1"
 											]
 										}
 									},
