@@ -189,6 +189,44 @@
 							"response": []
 						},
 						{
+							"name": "detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/subAdmins/2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"subAdmins",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/subAdmins/2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"subAdmins",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "create",
 							"request": {
 								"method": "POST",
@@ -218,25 +256,6 @@
 							"response": []
 						},
 						{
-							"name": "detail",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{host}}api/admin/subAdmins/2",
-									"host": [
-										"{{host}}api"
-									],
-									"path": [
-										"admin",
-										"subAdmins",
-										"2"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "update",
 							"request": {
 								"method": "POST",
@@ -252,25 +271,6 @@
 									"mode": "raw",
 									"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
 								},
-								"url": {
-									"raw": "{{host}}api/admin/subAdmins/2",
-									"host": [
-										"{{host}}api"
-									],
-									"path": [
-										"admin",
-										"subAdmins",
-										"2"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete",
-							"request": {
-								"method": "DELETE",
-								"header": [],
 								"url": {
 									"raw": "{{host}}api/admin/subAdmins/2",
 									"host": [
@@ -521,6 +521,17 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "attribute search",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -607,6 +618,253 @@
 									"path": [
 										"admin",
 										"masterCategories"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "contact",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/contacts",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"contacts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"reply_content\" : \"khoa0_quy111\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/contacts/1",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"contacts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/contacts/1",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"contacts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "notifications",
+					"item": [
+						{
+							"name": "list all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/notifications",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\" : \"thon tin thong bao 2\",\n\t\"message\" : \"chieu nay nhau nghe anh em 2\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/notifications",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}api/admin/notifications/2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"notifications",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/admin/notifications/2",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"admin",
+										"notifications",
+										"2"
 									]
 								}
 							},
@@ -891,18 +1149,18 @@
 													}
 												],
 												"body": {
-													"mode": "urlencoded",
-													"urlencoded": []
+													"mode": "formdata",
+													"formdata": []
 												},
 												"url": {
-													"raw": "{{host}}/api/user-categories/4/assets/create",
+													"raw": "{{host}}/api/user-categories/1/assets/create",
 													"host": [
 														"{{host}}"
 													],
 													"path": [
 														"api",
 														"user-categories",
-														"4",
+														"1",
 														"assets",
 														"create"
 													]
@@ -1059,14 +1317,14 @@
 													]
 												},
 												"url": {
-													"raw": "{{host}}/api/user-categories/4/assets",
+													"raw": "{{host}}/api/user-categories/1/assets",
 													"host": [
 														"{{host}}"
 													],
 													"path": [
 														"api",
 														"user-categories",
-														"4",
+														"1",
 														"assets"
 													]
 												}
@@ -1179,18 +1437,8 @@
 														"type": "text"
 													}
 												],
-												"body": {
-													"mode": "urlencoded",
-													"urlencoded": [
-														{
-															"key": "attach",
-															"value": "3",
-															"type": "text"
-														}
-													]
-												},
 												"url": {
-													"raw": "{{host}}/api/upload/attach/5",
+													"raw": "{{host}}/api/upload/attach/2",
 													"host": [
 														"{{host}}"
 													],
@@ -1198,7 +1446,7 @@
 														"api",
 														"upload",
 														"attach",
-														"5"
+														"2"
 													]
 												}
 											},
@@ -1379,18 +1627,25 @@
 												},
 												{
 													"key": "attachments[]",
-													"value": "4",
-													"type": "text"
-												},
-												{
-													"key": "attachments[]",
-													"value": "3",
+													"value": "12",
 													"type": "text",
 													"disabled": true
 												},
 												{
-													"key": "more[0][aaaa]",
-													"value": "",
+													"key": "attachments[]",
+													"value": "11",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "attachments[]",
+													"value": "8",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "attachments[]",
+													"value": "9",
 													"type": "text",
 													"disabled": true
 												}
@@ -1424,18 +1679,18 @@
 												}
 											]
 										},
-										"method": "POST",
+										"method": "PUT",
 										"header": [
 											{
 												"key": "Content-Type",
 												"name": "Content-Type",
-												"value": "application/json",
+												"value": "application/x-www-form-urlencoded",
 												"type": "text"
 											}
 										],
 										"body": {
-											"mode": "formdata",
-											"formdata": [
+											"mode": "urlencoded",
+											"urlencoded": [
 												{
 													"key": "detail[1][id]",
 													"value": "1",
@@ -1532,21 +1787,21 @@
 													"disabled": true
 												},
 												{
-													"key": "_method",
-													"value": "put",
+													"key": "remove_files[]",
+													"value": "12",
 													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/assets/6",
+											"raw": "{{host}}/api/assets/15",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"assets",
-												"6"
+												"15"
 											]
 										}
 									},
@@ -1720,14 +1975,14 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{host}}/api/categories/1",
+											"raw": "{{host}}/api/categories/6",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"categories",
-												"1"
+												"6"
 											]
 										}
 									},
@@ -1846,14 +2101,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/categories/1",
+											"raw": "{{host}}/api/categories/2",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"categories",
-												"1"
+												"2"
 											]
 										}
 									},
@@ -1862,19 +2117,15 @@
 								{
 									"name": "edit",
 									"request": {
-										"method": "POST",
+										"method": "GET",
 										"header": [
 											{
 												"key": "Content-Type",
 												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
 											}
 										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
-										},
 										"url": {
 											"raw": "{{host}}/api/categories/8/edit",
 											"host": [
@@ -2064,14 +2315,14 @@
 													}
 												],
 												"url": {
-													"raw": "{{host}}/api/invites/4/agree",
+													"raw": "{{host}}/api/invites/2/agree",
 													"host": [
 														"{{host}}"
 													],
 													"path": [
 														"api",
 														"invites",
-														"4",
+														"2",
 														"agree"
 													]
 												}
@@ -2406,12 +2657,18 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}api/destinations",
+											"raw": "{{host}}api/destinations?per_page=10",
 											"host": [
 												"{{host}}api"
 											],
 											"path": [
 												"destinations"
+											],
+											"query": [
+												{
+													"key": "per_page",
+													"value": "10"
+												}
 											]
 										}
 									},
@@ -2502,14 +2759,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/destinations/1/edit",
+											"raw": "{{host}}/api/destinations/3/edit",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"destinations",
-												"1",
+												"3",
 												"edit"
 											]
 										}
@@ -2563,7 +2820,7 @@
 												},
 												{
 													"key": "auto_mail_id",
-													"value": "2",
+													"value": "4",
 													"type": "text"
 												}
 											]
@@ -2628,7 +2885,7 @@
 												},
 												{
 													"key": "auto_mail_id",
-													"value": "1",
+													"value": "2",
 													"type": "text"
 												}
 											]
@@ -2883,14 +3140,12 @@
 												{
 													"key": "destination_ids[]",
 													"value": "1",
-													"type": "text",
-													"disabled": true
+													"type": "text"
 												},
 												{
 													"key": "destination_ids[]",
 													"value": "2",
-													"type": "text",
-													"disabled": true
+													"type": "text"
 												}
 											]
 										},
@@ -2950,26 +3205,24 @@
 												{
 													"key": "destination_ids[]",
 													"value": "1",
-													"type": "text",
-													"disabled": true
+													"type": "text"
 												},
 												{
 													"key": "destination_ids[]",
-													"value": "153",
-													"type": "text",
-													"disabled": true
+													"value": "3",
+													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/mailTemplates/149",
+											"raw": "{{host}}/api/mailTemplates/145",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"mailTemplates",
-												"149"
+												"145"
 											]
 										}
 									},
@@ -3010,6 +3263,162 @@
 												"api",
 												"mailTemplates",
 												"147"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "invate",
+					"item": [
+						{
+							"name": "invites",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Partner",
+					"item": [
+						{
+							"name": "Management",
+							"item": [
+								{
+									"name": "index",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}api/owners",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"owners"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "report good",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}api/owners/3/good",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"owners",
+												"3",
+												"good"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "report emergency",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}api/owners/3/emergency",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"owners",
+												"3",
+												"emergency"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{host}}api/owners/2",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"owners",
+												"2"
 											]
 										}
 									},
