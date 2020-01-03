@@ -1494,6 +1494,43 @@
 									"response": []
 								},
 								{
+									"name": "show",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/api/categories/6/assets",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"categories",
+												"6",
+												"assets"
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "detail",
 									"request": {
 										"auth": {
@@ -1549,7 +1586,7 @@
 											"formdata": [
 												{
 													"key": "detail[1][id]",
-													"value": "11",
+													"value": "1",
 													"type": "text"
 												},
 												{
@@ -3316,12 +3353,110 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{host}}api/owners",
+											"raw": "{{host}}api/owners?per_page=10",
 											"host": [
 												"{{host}}api"
 											],
 											"path": [
 												"owners"
+											],
+											"query": [
+												{
+													"key": "per_page",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}api/owners/2/categories/1",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"owners",
+												"2",
+												"categories",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "category assets",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}api/owners/2/categories/6/assets",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"owners",
+												"2",
+												"categories",
+												"6",
+												"assets"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "user category assets",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}api/owners/2/user-categories/1/assets",
+											"host": [
+												"{{host}}api"
+											],
+											"path": [
+												"owners",
+												"2",
+												"user-categories",
+												"1",
+												"assets"
 											]
 										}
 									},
@@ -3370,7 +3505,14 @@
 											]
 										},
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
 										"url": {
 											"raw": "{{host}}api/owners/3/emergency",
 											"host": [
@@ -3437,6 +3579,17 @@
 		},
 		{
 			"name": "test mail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot",
 			"request": {
 				"method": "GET",
 				"header": [],
