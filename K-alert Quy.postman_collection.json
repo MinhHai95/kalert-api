@@ -15,14 +15,7 @@
 							"name": "login",
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [],
@@ -31,12 +24,12 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "admin@admin.com",
+											"value": "superadmin@mail.com",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "admin",
+											"value": "Abcd1234",
 											"type": "text"
 										}
 									]
@@ -825,17 +818,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\" : \"khoa0_quy\",\n\t\"email\" : \"khoatcUpdate@nal.vn\"\n}"
+									"raw": "{\n\t\"title\" : \"khoa0_qu1yafa upate 1\",\n\t\"message\" : \"khoatcUpdate@1nal.vn update1 1 \"\n}"
 								},
 								"url": {
-									"raw": "{{host}}api/admin/notifications/2",
+									"raw": "{{host}}api/admin/notifications/b16984b4-db23-43a8-baea-437270b61b1b",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"admin",
 										"notifications",
-										"2"
+										"b16984b4-db23-43a8-baea-437270b61b1b"
 									]
 								}
 							},
@@ -857,14 +850,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{host}}api/admin/notifications/2",
+									"raw": "{{host}}api/admin/notifications/b16984b4-db23-43a8-baea-437270b61b1b",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"admin",
 										"notifications",
-										"2"
+										"b16984b4-db23-43a8-baea-437270b61b1b"
 									]
 								}
 							},
@@ -887,14 +880,7 @@
 							"name": "login",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/x-www-form-urlencoded",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
@@ -1015,8 +1001,8 @@
 									}
 								],
 								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"email\" : \"minhmh@nal.vn\"\n}"
+									"mode": "formdata",
+									"formdata": []
 								},
 								"url": {
 									"raw": "{{host}}api/auth/recovery",
@@ -1034,6 +1020,16 @@
 						{
 							"name": "logout",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"url": {
@@ -1078,12 +1074,51 @@
 							"response": []
 						},
 						{
-							"name": "Update",
+							"name": "put",
 							"request": {
-								"method": "GET",
-								"header": [],
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "testUser1111",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": ""
+									"raw": "{{host}}api/auth/me",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
 								}
 							},
 							"response": []
@@ -1434,11 +1469,12 @@
 														"key": "Content-Type",
 														"name": "Content-Type",
 														"value": "application/x-www-form-urlencoded",
-														"type": "text"
+														"type": "text",
+														"disabled": true
 													}
 												],
 												"url": {
-													"raw": "{{host}}/api/upload/attach/2",
+													"raw": "{{host}}/api/upload/attach/4",
 													"host": [
 														"{{host}}"
 													],
@@ -1446,7 +1482,7 @@
 														"api",
 														"upload",
 														"attach",
-														"2"
+														"4"
 													]
 												}
 											},
@@ -1516,15 +1552,14 @@
 											"formdata": []
 										},
 										"url": {
-											"raw": "{{host}}/api/categories/6/assets",
+											"raw": "{{host}}/api/assets/1",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
-												"categories",
-												"6",
-												"assets"
+												"assets",
+												"1"
 											]
 										}
 									},
@@ -1546,14 +1581,14 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{host}}/api/assets/6",
+											"raw": "{{host}}/api/assets/56",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"assets",
-												"6"
+												"56"
 											]
 										}
 									},
@@ -1664,7 +1699,7 @@
 												},
 												{
 													"key": "attachments[]",
-													"value": "12",
+													"value": "74",
 													"type": "text",
 													"disabled": true
 												},
@@ -1867,14 +1902,14 @@
 											}
 										],
 										"url": {
-											"raw": "{{host}}/api/assets/6",
+											"raw": "{{host}}/api/assets/7",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"assets",
-												"6"
+												"7"
 											]
 										}
 									},
@@ -2604,10 +2639,27 @@
 											]
 										},
 										"method": "POST",
-										"header": [],
+										"header": [
+											{
+												"key": "Accept",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
 										"body": {
 											"mode": "formdata",
-											"formdata": []
+											"formdata": [
+												{
+													"key": "id",
+													"value": "gheaney",
+													"type": "text"
+												}
+											]
 										},
 										"url": {
 											"raw": "{{host}}api/users/search",
@@ -3339,6 +3391,9 @@
 							"item": [
 								{
 									"name": "index",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -3351,7 +3406,18 @@
 											]
 										},
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
 										"url": {
 											"raw": "{{host}}api/owners?per_page=10",
 											"host": [
@@ -3372,6 +3438,9 @@
 								},
 								{
 									"name": "category",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -3384,9 +3453,20 @@
 											]
 										},
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
 										"url": {
-											"raw": "{{host}}api/owners/2/categories/1",
+											"raw": "{{host}}api/owners/2/categories/2",
 											"host": [
 												"{{host}}api"
 											],
@@ -3394,7 +3474,7 @@
 												"owners",
 												"2",
 												"categories",
-												"1"
+												"2"
 											]
 										}
 									},
@@ -3416,13 +3496,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{host}}api/owners/2/categories/6/assets",
+											"raw": "{{host}}api/owners/1/categories/6/assets",
 											"host": [
 												"{{host}}api"
 											],
 											"path": [
 												"owners",
-												"2",
+												"1",
 												"categories",
 												"6",
 												"assets"
@@ -3478,13 +3558,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{host}}api/owners/3/good",
+											"raw": "{{host}}api/owners/2/good",
 											"host": [
 												"{{host}}api"
 											],
 											"path": [
 												"owners",
-												"3",
+												"2",
 												"good"
 											]
 										}
@@ -3514,13 +3594,13 @@
 											}
 										],
 										"url": {
-											"raw": "{{host}}api/owners/3/emergency",
+											"raw": "{{host}}api/owners/2/emergency",
 											"host": [
 												"{{host}}api"
 											],
 											"path": [
 												"owners",
-												"3",
+												"2",
 												"emergency"
 											]
 										}
@@ -3565,6 +3645,112 @@
 										}
 									},
 									"response": []
+								},
+								{
+									"name": "assets detail",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/assets/47",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"47"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "assets note",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/assets/1/note",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"1",
+												"note"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "assets note",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "note",
+													"value": "adasds",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/api/assets/1/note",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"assets",
+												"1",
+												"note"
+											]
+										}
+									},
+									"response": []
 								}
 							],
 							"protocolProfileBehavior": {},
@@ -3579,11 +3765,42 @@
 		},
 		{
 			"name": "test mail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{admin_token_local}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"minh54@yopmail.com\",\n\t\"name\": \"minhdeptrai\"\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "{{host}}api/commons/testApi",
+					"host": [
+						"{{host}}api"
+					],
+					"path": [
+						"commons",
+						"testApi"
+					]
 				}
 			},
 			"response": []
@@ -3591,10 +3808,38 @@
 		{
 			"name": "forgot",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"user1@mail.com\"\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "{{host}}api/auth/forgot",
+					"host": [
+						"{{host}}api"
+					],
+					"path": [
+						"auth",
+						"forgot"
+					]
 				}
 			},
 			"response": []
