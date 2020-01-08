@@ -735,7 +735,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{admin_token}}",
+											"value": "{{admin_token_local}}",
 											"type": "string"
 										}
 									]
@@ -1105,7 +1105,47 @@
 									"urlencoded": [
 										{
 											"key": "username",
-											"value": "testUser1111",
+											"value": "testUser1",
+											"type": "text"
+										},
+										{
+											"key": "full_name",
+											"value": "asasas",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@a.com",
+											"type": "text"
+										},
+										{
+											"key": "alert_period",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "alert_period_type",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "partner_contact_period",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "partner_contact_period_type",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "emergency_confirmation_period",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "emergency_confirmation_period_type",
+											"value": "",
 											"type": "text"
 										}
 									]
@@ -1118,6 +1158,92 @@
 									"path": [
 										"auth",
 										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "back to good",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{host}}api/auth/me/good",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"me",
+										"good"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pause",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "days",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/auth/me/pause",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"auth",
+										"me",
+										"pause"
 									]
 								}
 							},
@@ -3738,14 +3864,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/assets/1/note",
+											"raw": "{{host}}/api/assets/4/note",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"assets",
-												"1",
+												"4",
 												"note"
 											]
 										}
