@@ -886,7 +886,7 @@
 									"urlencoded": [
 										{
 											"key": "username",
-											"value": "testUser1",
+											"value": "testUser35",
 											"type": "text"
 										},
 										{
@@ -1125,7 +1125,7 @@
 										},
 										{
 											"key": "alert_period_type",
-											"value": "",
+											"value": "dd",
 											"type": "text"
 										},
 										{
@@ -1135,7 +1135,7 @@
 										},
 										{
 											"key": "partner_contact_period_type",
-											"value": "",
+											"value": "dd",
 											"type": "text"
 										},
 										{
@@ -1145,7 +1145,7 @@
 										},
 										{
 											"key": "emergency_confirmation_period_type",
-											"value": "",
+											"value": "dd",
 											"type": "text"
 										}
 									]
@@ -3516,6 +3516,74 @@
 							"name": "Management",
 							"item": [
 								{
+									"name": "Contact",
+									"item": [
+										{
+											"name": "contact",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/x-www-form-urlencoded",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "title",
+															"value": "qwewq",
+															"type": "text"
+														},
+														{
+															"key": "content",
+															"value": "asdasd",
+															"type": "text"
+														},
+														{
+															"key": "email",
+															"value": "a@gmail.com",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{host}}/api/contact",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"contact"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
 									"name": "index",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -3622,15 +3690,15 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{host}}api/owners/1/categories/6/assets",
+											"raw": "{{host}}api/owners/58/categories/5/assets",
 											"host": [
 												"{{host}}api"
 											],
 											"path": [
 												"owners",
-												"1",
+												"58",
 												"categories",
-												"6",
+												"5",
 												"assets"
 											]
 										}
