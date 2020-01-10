@@ -880,13 +880,19 @@
 							"name": "login",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
 										{
 											"key": "username",
-											"value": "testUser35",
+											"value": "testUser1",
 											"type": "text"
 										},
 										{
@@ -2123,6 +2129,194 @@
 							"name": "Categories",
 							"item": [
 								{
+									"name": "UserCategory",
+									"item": [
+										{
+											"name": "store",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "test",
+															"type": "text"
+														},
+														{
+															"key": "category_id",
+															"value": "1",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{host}}/api/user-categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/x-www-form-urlencoded",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "name",
+															"value": "1111",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{host}}/api/user-categories/15",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories",
+														"15"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "edit",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{host}}/api/user-categories/15/edit",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories",
+														"15",
+														"edit"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "delete",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{host}}/api/user-categories/15",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"user-categories",
+														"15"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
 									"name": "list all",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2171,96 +2365,22 @@
 											]
 										},
 										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{host}}/api/categories/6",
-											"host": [
-												"{{host}}"
-											],
-											"path": [
-												"api",
-												"categories",
-												"6"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "edit",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{host}}/api/categories/1/edit",
-											"host": [
-												"{{host}}"
-											],
-											"path": [
-												"api",
-												"categories",
-												"1",
-												"edit"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "store",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "POST",
 										"header": [
 											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"value": "application/x-www-form-urlencoded",
+												"key": "Accept",
+												"value": "application/json",
 												"type": "text"
 											}
 										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "name",
-													"value": "test",
-													"type": "text"
-												},
-												{
-													"key": "category_id",
-													"value": "1",
-													"type": "text"
-												}
-											]
-										},
 										"url": {
-											"raw": "{{host}}/api/categories",
+											"raw": "{{host}}/api/categories/5",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
-												"categories"
+												"categories",
+												"5"
 											]
 										}
 									},
@@ -2282,10 +2402,15 @@
 										"method": "PUT",
 										"header": [
 											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
 												"key": "Content-Type",
 												"name": "Content-Type",
-												"value": "application/x-www-form-urlencoded",
-												"type": "text"
+												"type": "text",
+												"value": "application/x-www-form-urlencoded"
 											}
 										],
 										"body": {
@@ -2293,66 +2418,20 @@
 											"urlencoded": [
 												{
 													"key": "name",
-													"value": "aaa",
+													"value": "1123123",
 													"type": "text"
 												}
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/categories/2",
+											"raw": "{{host}}/api/categories/10",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"categories",
-												"2"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "edit",
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"value": "application/x-www-form-urlencoded",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "{{host}}/api/categories/8/edit",
-											"host": [
-												"{{host}}"
-											],
-											"path": [
-												"api",
-												"categories",
-												"8",
-												"edit"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "delete",
-									"request": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{host}}/api/categories/1",
-											"host": [
-												"{{host}}"
-											],
-											"path": [
-												"api",
-												"categories",
-												"1"
+												"10"
 											]
 										}
 									},
@@ -3035,8 +3114,9 @@
 												},
 												{
 													"key": "auto_mail_id",
-													"value": "4",
-													"type": "text"
+													"value": "",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
@@ -3106,14 +3186,14 @@
 											]
 										},
 										"url": {
-											"raw": "{{host}}/api/destinations/1",
+											"raw": "{{host}}/api/destinations/149",
 											"host": [
 												"{{host}}"
 											],
 											"path": [
 												"api",
 												"destinations",
-												"1"
+												"149"
 											]
 										}
 									},
@@ -3567,13 +3647,13 @@
 													]
 												},
 												"url": {
-													"raw": "{{host}}/api/contact",
+													"raw": "{{host}}/api/contacts",
 													"host": [
 														"{{host}}"
 													],
 													"path": [
 														"api",
-														"contact"
+														"contacts"
 													]
 												}
 											},
